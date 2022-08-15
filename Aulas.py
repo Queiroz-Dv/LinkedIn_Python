@@ -1,5 +1,5 @@
+import calendar
 from datetime import date
-from datetime import time
 from datetime import datetime
 from datetime import timedelta
 import calendar
@@ -17,6 +17,7 @@ def Aula1():
     Funcao()
     print(f)
 
+
 def Aula2():
     def FuncaoSemArgumentos():
         print("Eu sou uma função")
@@ -27,6 +28,7 @@ def Aula2():
     def FuncaoQueRetornaValor(x):
         return x * x * x
 
+
 def Aula3():
     def Condicionais():
         x, y = 1000, 100
@@ -35,12 +37,14 @@ def Aula3():
         else:
             print("x é maior do que y")
 
+
 def Aula4():
     def LoopWhile():
         x = 0
         while (x < 5):
             print(x)
             x = x + 1
+
 
 def Aula5():
     def LoopFor():
@@ -59,6 +63,7 @@ def Aula5():
         for index, dia in enumerate(dias):
             print(index, dia)
 
+
 def Aula6():
     def LoopBreak():
         for x in range(5, 10):
@@ -71,6 +76,7 @@ def Aula6():
             if x == 7:
                 continue
             print("O valor de x é: ", x)
+
 
 def Aula7():
     class minhaClasse():
@@ -93,6 +99,7 @@ def Aula7():
 
         meuObj.meuSegundoMetodo("Executando outro método")
 
+
 def Aula8():
     def ManipulaDataHora():
         hoje = date.today()
@@ -108,6 +115,7 @@ def Aula8():
         tempo = datetime.time(data)
         print("Hora atual: ", tempo)
 
+
 def Aula9():
     def FormataDataHora():
         hoje = datetime.now()
@@ -115,14 +123,16 @@ def Aula9():
         print(hoje.strftime("Data e hora local: %c"))
         print(hoje.strftime("A hora atual é: %I:%M:%S %p"))
 
+
 def Aula10():
     def deltaTempo():
-        delta = timedelta(days=86, hours=8532, minutes= 7645)
+        delta = timedelta(days=86, hours=8532, minutes=7645)
         print(delta)
 
         hoje = datetime.now()
         print("Data no futuro: ", hoje + delta)
         print("Data no passado: ", hoje - delta)
+
 
 def Aula11():
     def QuantosDiasFaltam(ano, mes, dia):
@@ -131,10 +141,27 @@ def Aula11():
 
         qtoDias = dataProcurada - hoje
 
-        mensagemRetorno = "Faltam " + str(qtoDias).replace("days, 0:00:00", "") + " dias para a data " + dataProcurada.strftime("%d/%m/%y")
+        mensagemRetorno = "Faltam " + str(qtoDias).replace("days, 0:00:00",
+                                                           "") + " dias para a data " + dataProcurada.strftime(
+            "%d/%m/%y")
         print(mensagemRetorno)
 
-def Calendario():
-    calendariotexto = calendar.TextCalendar(calendar.SUNDAY)
-    txtCalendario = calendariotexto.formatmonth(2022,6)
-    print(txtCalendario)
+
+def Aula12():
+    def Calendario():
+        calendarioTexto = calendar.TextCalendar(calendar.SUNDAY)
+        txtCalendario = calendarioTexto.formatmonth(2022, 6)
+        print(txtCalendario)
+
+    def CalendarioHTML():
+        calendarioHtml = calendar.HTMLCalendar(calendar.SUNDAY)
+        htmlCalendario = calendarioHtml.formatmonth(2022, 6)
+        print(htmlCalendario)
+
+def Aula13():
+    def ImprimeMes():
+        for mes in calendar.month_name:
+            print(mes)
+
+        for dia in calendar.day_name:
+            print(dia)
